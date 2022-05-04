@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   </head>
-  <body>
+  <body> 
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -28,30 +28,20 @@
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p>Number generator 1-6</p>
-        <img src="./img/guess.png" alt="img" width="15%" height="15%">
-        <p></p>
-        <div id="slider-value">
-          ?
-        </div>  
-        <!-- Slider with Starting Value -->
-        <label>
-          Slider's Value
-          <input id = "slider" class="mdl-slider mdl-js-slider" type="range"
-          min="0" max="6" value="2" tabindex="0"
-          onchange = "updateSliderValue(this.value)">
-        </label>
-        <!-- Raised button with ripple -->
-        <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
-        >
-          Show Value
-        </button>
-        <!-- basic text -->
-        <p></p>
-        <div id="hello-world"></div>
-      </main>
-    </div>
+        <h3>Enter a number from 1 to 6:</h3>
+    <div id="slider-number"><h4>Selected Number: 1</h4></div>
+    <!-- Accent-colored raised button with ripple -->
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="updateNumber()">
+      Update Selected Number
+    </button>
+    <!-- Slider -->
+    <input class="mdl-slider mdl-js-slider" id="slider" type="range"
+      min="1" max="6" value="1" tabindex="0">
+    <!-- Accent-colored raised button with ripple -->
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="onButtonClick()">
+      See Result
+    </button>
+    <div id="result"></div>
+    </main>
   </body>
 </html>

@@ -17,17 +17,28 @@ if (navigator.serviceWorker) {
   )
 }
 
+var randomnumber = Math.floor(Math.random() * 6) + 1;
+var number = 1
+
 /**
- * This function updates the slider value.
+ * Sees if the number the user chose is equal to the random number and reassigns the random number.
  */
-function updateSliderValue(valueFromSlider) {
-  document.getElementById("slider-value").innerHTML = valueFromSlider
+function onButtonClick() {
+  if (number == randomnumber) {
+    document.getElementById("result").innerHTML = "<br><h5>The random number was " + randomnumber + "!</h5><br><h5>You got it right!</h5>"
+  } else {
+    document.getElementById("result").innerHTML = "<br><h5>The random number was " + randomnumber + "!</h5><br><h5>You got it wrong...</h5>"
+  }
+  randomnumber = Math.floor(Math.random() * 6) + 1;
+  console.log("The current random number is " + randomnumber + "!")
 }
 
 /**
- * This function displays the slider value.
+ * Updates the user's selected number to the number currently in the slider.
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML =
-    "<p>Value is: " + slider.value + "</p>"
+function updateNumber() {
+  number = document.getElementById("slider").value
+  document.getElementById("slider-number").innerHTML = "<h4>Selected Number: " + number + "</h4>"
 }
+
+console.log("The current random number is " + randomnumber + "!")
