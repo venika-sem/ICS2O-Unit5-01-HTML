@@ -28,21 +28,26 @@
         </div>
       </header>
       <main class="mdl-layout__content">
-        <h3>Enter a number from 1 to 6:</h3>
-    <div id="slider-number"><h4>Selected Number: 1</h4></div>
-    <!-- Accent-colored raised button with ripple -->
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="updateNumber()">
-      Update Selected Number
-    </button>
-    <!-- Slider -->
-    <input class="mdl-slider mdl-js-slider" id="slider" type="range"
-      min="1" max="6" value="1" tabindex="0">
-    <!-- Accent-colored raised button with ripple -->
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="onButtonClick()">
-      See Result
-    </button>
-    <div id="result"></div>
-     </main>
+        <!-- Slider with Starting Value -->
+        <label>
+          Choose a number:
+          <div id="slider-value">
+          ?
+        </div>
+          <input id = "slider" class="mdl-slider mdl-js-slider" type="range"
+          min="1" max="6" value="2" tabindex="0"
+          onchange = "updateSliderValue(this.value)">
+        </label>
+        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="myButtonClicked()"
+        >
+          Guess!
+        </button>
+        <!-- basic text -->
+        <div id="answer"></div>
+      </main>
     </div>
   </body>
 </html>
